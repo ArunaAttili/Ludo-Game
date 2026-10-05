@@ -1,0 +1,563 @@
+/* =========================================================
+   LUDO GAME - COMPLETE STYLE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #1f587c;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+/* =========================================================
+   GAME
+   ========================================================= */
+
+.game {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   PLAYERS
+   ========================================================= */
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.player {
+    height: 50px;
+
+    border: 2px solid white;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 14px;
+
+    font-weight: bold;
+
+    background: rgba(255,255,255,0.12);
+}
+
+.player:nth-child(1) {
+    border-color: #ef1b2d;
+}
+
+.player:nth-child(2) {
+    border-color: #08b957;
+}
+
+.player:nth-child(3) {
+    border-color: #ffd000;
+}
+
+.player:nth-child(4) {
+    border-color: #169bd5;
+}
+
+.player-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+
+    background: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   GAME LAYOUT
+   ========================================================= */
+
+.game-layout {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 38px;
+}
+
+
+/* =========================================================
+   BOARD
+   ========================================================= */
+
+.board {
+    width: 600px;
+    height: 600px;
+
+    display: grid;
+
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+
+    background: white;
+
+    border: 6px solid #111;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.35);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NORMAL CELLS
+   ========================================================= */
+
+.cell {
+    position: relative;
+
+    border: 1px solid #999;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   🔴 RED HOME - TOP LEFT
+   ========================================================= */
+
+.red-home {
+    background: #ef1b2d !important;
+}
+
+
+/* =========================================================
+   🟢 GREEN HOME - TOP RIGHT
+   ========================================================= */
+
+.green-home {
+    background: #08b957 !important;
+}
+
+
+/* =========================================================
+   🔵 BLUE HOME - BOTTOM LEFT
+   ========================================================= */
+
+.blue-home {
+    background: #169bd5 !important;
+}
+
+
+/* =========================================================
+   🟡 YELLOW HOME - BOTTOM RIGHT
+   ========================================================= */
+
+.yellow-home {
+    background: #ffd000 !important;
+}
+
+
+/* =========================================================
+   LIGHT WINNING PATHS
+   ========================================================= */
+
+
+/* 🔴 LIGHT RED - MIDDLE LEFT */
+
+.red-path {
+    background: #f7a8ae !important;
+}
+
+
+/* 🟢 LIGHT GREEN - TOP MIDDLE */
+
+.green-path {
+    background: #9be1b9 !important;
+}
+
+
+/* 🟡 LIGHT YELLOW - MIDDLE RIGHT */
+
+.yellow-path {
+    background: #fff0a8 !important;
+}
+
+
+/* 🔵 LIGHT BLUE - BOTTOM MIDDLE */
+
+.blue-path {
+    background: #a7dff3 !important;
+}
+
+
+/* =========================================================
+   ENTRANCE / START
+   ONLY COLOUR
+   NO ARROW
+   ========================================================= */
+
+
+/* 🔴 RED START */
+
+.red-start {
+    background: #ef1b2d !important;
+}
+
+
+/* 🟢 GREEN START */
+
+.green-start {
+    background: #08b957 !important;
+}
+
+
+/* 🟡 YELLOW START */
+
+.yellow-start {
+    background: #ffd000 !important;
+}
+
+
+/* 🔵 BLUE START */
+
+.blue-start {
+    background: #169bd5 !important;
+}
+
+
+/* =========================================================
+   SAFE CELLS
+   ========================================================= */
+
+.safe {
+    background: white !important;
+}
+
+
+/* =========================================================
+   WINNING PATH ARROWS
+   ========================================================= */
+
+.finish-arrow {
+    position: absolute;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: white;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================================================
+   CENTER
+   ========================================================= */
+
+.center {
+    background: white !important;
+}
+
+
+/* =========================================================
+   CENTER TRIANGLES
+   ========================================================= */
+
+.center-red,
+.center-green,
+.center-yellow,
+.center-blue {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+}
+
+
+/* =========================================================
+   TOKENS
+   ========================================================= */
+
+.token {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    position: relative;
+
+    z-index: 100;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,0.5);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   🔴 RED TOKEN
+   ========================================================= */
+
+.red-token {
+    background: #ef1b2d !important;
+    color: white;
+
+    border-color: white !important;
+}
+
+
+/* =========================================================
+   🟢 GREEN TOKEN
+   ========================================================= */
+
+.green-token {
+    background: #08b957 !important;
+    color: white;
+
+    border-color: white !important;
+}
+
+
+/* =========================================================
+   🟡 YELLOW TOKEN
+   ========================================================= */
+
+.yellow-token {
+    background: #ffd000 !important;
+    color: #111;
+
+    border-color: white !important;
+}
+
+
+/* =========================================================
+   🔵 BLUE TOKEN
+   ========================================================= */
+
+.blue-token {
+    background: #169bd5 !important;
+    color: white;
+
+    border-color: white !important;
+}
+
+
+/* =========================================================
+   TOKEN STACK
+   ========================================================= */
+
+.token.stacked {
+    margin-left: -8px;
+}
+
+
+/* =========================================================
+   DICE PANEL
+   ========================================================= */
+
+.controls {
+    width: 280px;
+
+    background: rgba(255,255,255,0.16);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================================
+   DICE
+   ========================================================= */
+
+.dice {
+    width: 100px;
+    height: 100px;
+
+    background: white;
+
+    color: black;
+
+    border-radius: 18px;
+
+    margin: 20px auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   ROLL BUTTON
+   ========================================================= */
+
+#rollButton {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ffc400;
+
+    color: #111;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#rollButton:hover {
+    filter: brightness(1.08);
+}
+
+#rollButton:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   TURN
+   ========================================================= */
+
+.turn {
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SAFE STAR
+   ========================================================= */
+
+.safe span {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .game-layout {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .board {
+        width: 90vw;
+        height: 90vw;
+
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .controls {
+        width: 90vw;
+
+        max-width: 400px;
+    }
+
+    .players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

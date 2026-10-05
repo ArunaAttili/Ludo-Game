@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ludo Game</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <h1>LUDO GAME</h1>
+        <p class="subtitle">Classic 4 Player Ludo</p>
+
+        <!-- PLAYER CARDS -->
+        <div class="players">
+
+            <div class="player red-player">
+                <div class="player-icon">1</div>
+                <span>RED</span>
+            </div>
+
+            <div class="player green-player">
+                <div class="player-icon">2</div>
+                <span>GREEN</span>
+            </div>
+
+            <div class="player yellow-player">
+                <div class="player-icon">3</div>
+                <span>YELLOW</span>
+            </div>
+
+            <div class="player blue-player">
+                <div class="player-icon">4</div>
+                <span>BLUE</span>
+            </div>
+
+        </div>
+
+
+        <!-- GAME AREA -->
+        <div class="game-layout">
+
+            <!-- LUDO BOARD -->
+            <div id="board" class="board"></div>
+
+
+            <!-- DICE PANEL -->
+            <div class="controls">
+
+                <h2>🎲 Dice</h2>
+
+                <div id="dice" class="dice">1</div>
+
+                <button id="rollButton">
+                    ROLL DICE
+                </button>
+
+                <h3 id="turnText">
+                    Player 1's Turn
+                </h3>
+
+                <p id="message">
+                    Roll the dice to play.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+
+</body>
+</html>
